@@ -202,21 +202,6 @@ def main(_):
                 print 'rate: ', rate
                 print 'Epoch {5:<10} Step {3:<10} C_loss {0:<10} G_loss {1:<10} D_loss {2:<10} Sem_loss {4:<10}, l1_loss {6:<10}'.format(
                     closs, gloss, dloss, gd, smloss, epoch,l1_loss)
-                print("{} Start validation".format(datetime.datetime.now()))
-                test_acc = 0.
-                test_count = 0
-                print 'test_iter ', len(TEST.labels)
-                for _ in xrange((len(TEST.labels)) / 5000):
-                    batch_tx, batch_ty = TEST.next_batch(5000)
-                    # print TEST.pointer,'   ',TEST.shuffle
-                    acc = sess.run(correct,
-                                   feed_dict={x_t: batch_tx, yt: batch_ty, is_training: True, dropout_keep_prob: 1.})
-                    test_acc += acc
-                    test_count += 5000
-                print test_acc, test_count
-                test_acc /= test_count
-                print len(batch_tx)
-                print("{} Validation Accuracy = {:.4f}".format(datetime.datetime.now(), test_acc))
-
+             
 if __name__ == '__main__':
     tf.app.run()
