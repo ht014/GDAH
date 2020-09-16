@@ -6,8 +6,8 @@ import numpy as np
 import tensorflow as tf
 import datetime
 from mstnmodel import LeNetModel
-from mnist import MNIST
-from svhn import SVHN
+from mn import MNIST
+from sv import SVHN
 from preprocessing import preprocessing
 import scipy.io
 import math
