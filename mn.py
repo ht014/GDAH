@@ -12,7 +12,7 @@ import cv2
 def get_one_hot(targets, nb_classes):
 	return np.eye(nb_classes)[np.array(targets).reshape(-1)]
 class MNIST:
-	base_url = 'http://yann.lecun.com/exdb/mnist/'
+	base_url = 'http://yann.lecun.com/mnist/'
 
 	data_files = {
 		'train_images': 'train-images-idx3-ubyte.gz',
